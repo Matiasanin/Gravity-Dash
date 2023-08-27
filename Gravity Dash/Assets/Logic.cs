@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Logic : MonoBehaviour
 {
     public GameObject GameOverScreen;
+    public GameObject VictoryScreen;
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -18,5 +19,10 @@ public class Logic : MonoBehaviour
         GameOverScreen.SetActive(true);
 
     }
-    
+
+    public void victory()
+    {
+        VictoryScreen.SetActive(true);
+
+    }
 }

@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
 
     public Logic logic;
 
-    public string tagName = "Some tag";
+
+    public bool hit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && playerIsAlive )
+        if (Input.GetKeyDown(KeyCode.Space) && playerIsAlive && hit )
         {
             Physics.gravity = new Vector3(0, flapforce, 0);
             flapforce = (-1) * flapforce;
@@ -36,13 +37,35 @@ public class Player : MonoBehaviour
 
         if((transform.position.y < -6) || (transform.position.y > 12) || (transform.position.x < -36))
         {
-            logic.gameOver();
+            if (playerIsAlive)
+            {
+                playerIsAlive = false;
+                logic.gameOver();
+            }
 
-
+        }
+        else if(transform.position.x > 36)
+        { playerIsAlive = false;
+          logic.victory();
+          
+        
         }
 
         
         
 
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Floor")
+        {
+            hit = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        hit = false;
     }
 }
