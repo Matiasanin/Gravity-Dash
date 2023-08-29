@@ -18,8 +18,8 @@ public class simpleMovement : MonoBehaviour
     void Update()
     {
         Move = Input.GetAxis("Horizontal");
-      
-        Debug.Log("Text: " + Move);
+
+   // Debug.Log("Text: " + Move);
         _rb.velocity = new Vector2(Move * speed, _rb.velocity.y);
     }
 }
