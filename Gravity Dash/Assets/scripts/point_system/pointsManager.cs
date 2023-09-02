@@ -47,7 +47,7 @@ public class PointsManager : MonoBehaviour
 
     private float CalculatePointsPerSecond()
     {
-        // Points increase per second based on timeSinceStart
+        // Points increase per second based on timeSinceStart, this always gives false
         float basePointsPerSecond = 2.5f + (timeSinceStart <= 0.0f ? 2f : Mathf.Min((timeSinceStart - 60.0f) / 60.0f, 3.0f));
         
         // Points increase per second Magic on 3minutes

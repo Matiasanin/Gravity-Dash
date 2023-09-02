@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 public class constantMovement : MonoBehaviour
 {
     public float speed = 5.0f; // Adjust the speed as needed
-
+    private float timeSinceStart = 0.0f;
 
     private void Start()
     {
@@ -15,7 +15,11 @@ public class constantMovement : MonoBehaviour
 
     private void Update()
     {
+        timeSinceStart += Time.deltaTime;
+
         // Automatically move the player to the right
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        float baseSpeedPerSecond = speed + Mathf.Min((timeSinceStart - 60.0f) / 60.0f, 3.0f);
+        transform.Translate(Vector3.right * baseSpeedPerSecond * Time.deltaTime);
+        Debug.LogError("Current Speed" + baseSpeedPerSecond);
     }
 }
