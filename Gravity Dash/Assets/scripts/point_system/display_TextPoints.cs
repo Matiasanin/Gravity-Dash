@@ -16,6 +16,6 @@ public class PointsDisplay : MonoBehaviour
 
         float currentPoints = PointsManager.GetCurrentPoints();
         float pointsPerSecond = PointsManager.GetCurrentPointsPerSecond();
-        pointsText.text = "Points " + currentPoints.ToString("F2") + "x" + pointsPerSecond.ToString("F2");
+        pointsText.text = currentPoints.ToString("F2") + "x" + pointsPerSecond.ToString("F2");
     }
 }
