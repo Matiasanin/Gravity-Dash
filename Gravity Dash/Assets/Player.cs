@@ -35,23 +35,23 @@ public class Player : MonoBehaviour
 
         transform = cube.GetComponent<Transform>();
 
-        if((transform.position.y < -6) || (transform.position.y > 12) || (transform.position.x < -36))
+        if((transform.position.y < -10) || (transform.position.y > 16) || (transform.position.x < -36))
         {
-            /*
+            
             if (playerIsAlive)
             {
                 playerIsAlive = false;
                 logic.gameOver();
             }
-            */
+            
 
         }
-        else if(transform.position.x > 36)
+        else if(transform.position.x > 200)
         { 
-         /*
+         
           playerIsAlive = false;
           logic.victory();
-          */
+          
         
         }
 
