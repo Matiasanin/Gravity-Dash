@@ -8,6 +8,7 @@ public class constantMovement : MonoBehaviour
     public float speed = 5.0f; // Adjust the speed as needed
     public float acceleration;
     public Rigidbody rigid; 
+    public float timeSinceStart = 0f;
 
     private void Start()
     {
