@@ -10,8 +10,10 @@ public class Player : MonoBehaviour
     public bool playerIsAlive = true;
     public GameObject cube;
     public Transform transform;
-
+    public float speed;
     public Logic logic;
+    public GameObject cameraGO;
+    public float deltaDistance;
 
 
     public bool hit = false;
@@ -19,45 +21,43 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Space) && hit )
         {
             Physics.gravity = new Vector3(0, flapforce, 0);
             flapforce = (-1) * flapforce;
-  
         }
         
 
         transform = cube.GetComponent<Transform>();
 
-        if((transform.position.y < -6) || (transform.position.y > 12) || (transform.position.x < -36))
+        if((transform.position.y < -10) || (transform.position.y > 16) || (transform.position.x < -36))
         {
-            /*
             if (playerIsAlive)
             {
                 playerIsAlive = false;
                 logic.gameOver();
             }
-            */
-
         }
-        else if(transform.position.x > 36)
+        else if(transform.position.x > 200)
         { 
-         /*
           playerIsAlive = false;
           logic.victory();
-          */
-        
         }
-
-        
-        
-
+        if (cameraGO.transform.position.x-transform.position.x > deltaDistance)
+        {
+            if (playerIsAlive)
+            {
+                playerIsAlive = false;
+                logic.gameOver();
+            }
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -71,5 +71,14 @@ public class Player : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         hit = false;
+    }
+
+    public void GameOver()
+    {
+        if (playerIsAlive)
+        {
+            playerIsAlive = false;
+            logic.gameOver();
+        }
     }
 }

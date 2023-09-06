@@ -21,8 +21,8 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-        Debug.Log(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        Debug.Log(SceneManager.GetActiveScene().buildIndex + 3);
         Debug.Log("click");
     }
     /*
