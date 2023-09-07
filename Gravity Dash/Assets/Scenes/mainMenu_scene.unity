@@ -237,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5081136563284244316, guid: 9a8b5fbdca5710844b2cf4c03e74bfd7, type: 3}
       propertyPath: m_Name
-      value: Credits
+      value: Credits button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 313864669}
   - component: {fileID: 313864668}
   m_Layer: 5
-  m_Name: Quit Button
+  m_Name: Quit button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,7 +359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.999966, y: -133.00002}
+  m_AnchoredPosition: {x: 18.999966, y: -255}
   m_SizeDelta: {x: 450, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &313864665
@@ -983,7 +983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.999966, y: 19}
+  m_AnchoredPosition: {x: 18.999966, y: -258}
   m_SizeDelta: {x: 450, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662225185
@@ -2200,7 +2200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5081136563284244316, guid: 9a8b5fbdca5710844b2cf4c03e74bfd7, type: 3}
       propertyPath: m_Name
-      value: Quit
+      value: Quit button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
