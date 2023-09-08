@@ -17,17 +17,16 @@ public class Logic : MonoBehaviour
         game = true;
     }
 
-    public void music()
-    {
-        audioSource = GetComponent<AudioSource>();
-        while (game)
-        { audioSource.Play(); }
-        }
+
+      
+        
 
     public void gameOver()
     {
         GameOverScreen.SetActive(true);
         game = false;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
 
     public void victory()
