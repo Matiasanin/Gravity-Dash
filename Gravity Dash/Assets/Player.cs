@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Logic logic;
     public GameObject cameraGO;
     public float deltaDistance;
+    public AudioSource audiosource;
 
 
     public bool hit = false;
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
         
 
         transform = cube.GetComponent<Transform>();
+        audiosource = cube.GetComponent<AudioSource>();
 
         if((transform.position.y < -10) || (transform.position.y > 16) || (transform.position.x < -36))
         {
@@ -64,6 +66,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Floor")
         {
+            audiosource.Play();
             hit = true;
         }
     }
