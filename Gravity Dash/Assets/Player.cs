@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
                 logic.gameOver();
             }
         }
-        else if(transform.position.x > 600)
+        else if(transform.position.x > 920)
         { 
           playerIsAlive = false;
           logic.victory();
