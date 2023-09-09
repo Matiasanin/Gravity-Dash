@@ -66,8 +66,8 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Floor")
         {
-            audiosource.Play();
             hit = true;
+            audiosource.Play();
         }
     }
 
