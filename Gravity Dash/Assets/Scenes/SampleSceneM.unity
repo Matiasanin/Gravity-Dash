@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8992,7 +8992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   acceleration: 1
-  rigid: {fileID: 1770138307}
+  rigid: {fileID: 1770138313}
 --- !u!114 &1770138306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9000,12 +9000,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770138304}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 178e10dd4e5e1be4fa6f8c4d52afe3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigid: {fileID: 1770138307}
+  rigid: {fileID: 0}
   flapforce: 90
   playerIsAlive: 1
   cube: {fileID: 1770138304}
@@ -9016,33 +9016,6 @@ MonoBehaviour:
   deltaDistance: 35
   audiosource: {fileID: 0}
   hit: 0
---- !u!54 &1770138307
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770138304}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 104
-  m_CollisionDetection: 0
 --- !u!65 &1770138308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9069,6 +9042,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36fc386b31ed0274792490f2e19ca874, type: 3}
   m_PrefabInstance: {fileID: 1908323553}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1770138312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770138304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8c2d442f22c7946ae2d1e56918a9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIsAlive: 1
+  cube: {fileID: 1770138304}
+  logic: {fileID: 234240300}
+  cameraGO: {fileID: 963194225}
+  deltaDistance: 35
+  audiosource: {fileID: 0}
+  jumpForce: 10
+--- !u!54 &1770138313
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770138304}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1812713931
 GameObject:
   m_ObjectHideFlags: 0
@@ -9586,13 +9605,16 @@ PrefabInstance:
       addedObject: {fileID: 1770138308}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 36fc386b31ed0274792490f2e19ca874, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1770138307}
+      addedObject: {fileID: 1770138313}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 36fc386b31ed0274792490f2e19ca874, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1770138306}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 36fc386b31ed0274792490f2e19ca874, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1770138305}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 36fc386b31ed0274792490f2e19ca874, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1770138312}
   m_SourcePrefab: {fileID: 100100000, guid: 36fc386b31ed0274792490f2e19ca874, type: 3}
 --- !u!1 &1910872158
 GameObject:
