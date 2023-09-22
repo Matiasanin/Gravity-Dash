@@ -9005,7 +9005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178e10dd4e5e1be4fa6f8c4d52afe3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigid: {fileID: 0}
+  rigid: {fileID: 1770138313}
   flapforce: 90
   playerIsAlive: 1
   cube: {fileID: 1770138304}
@@ -9060,7 +9060,7 @@ MonoBehaviour:
   cameraGO: {fileID: 963194225}
   deltaDistance: 35
   audiosource: {fileID: 0}
-  jumpForce: 10
+  jumpForce: 50
 --- !u!54 &1770138313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9086,7 +9086,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!1 &1812713931
 GameObject:
@@ -9558,7 +9558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36fc386b31ed0274792490f2e19ca874, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.067093
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 36fc386b31ed0274792490f2e19ca874, type: 3}
       propertyPath: m_LocalPosition.z

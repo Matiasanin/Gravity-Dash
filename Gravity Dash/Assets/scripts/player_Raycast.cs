@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,22 +11,22 @@ public class Player : MonoBehaviour
     public GameObject cameraGO;
     public float deltaDistance;
     public AudioSource audiosource;
-    // Adjust this force as needed
     public float jumpForce = 50.0f;
-    private bool hit = false;
+    private bool canJump = true;
+    private bool jumpUpwards = true; // Flag to toggle jump direction
 
-    // Start is called before the first frame update
     void Start()
     {
         audiosource = cube.GetComponent<AudioSource>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Check for jumping input and collision with the floor
-        if (Input.GetKeyDown(KeyCode.Space) && hit)
+        // Check for jumping input and ability to jump
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
+            UnityEngine.Debug.Log("space bar");
             Jump();
         }
 
@@ -40,40 +41,61 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            hit = true;
+            canJump = true; // Player can jump when touching the floor
             audiosource.Play();
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    void OnCollisionExit(Collision collision)
     {
-        hit = false;
-    }
-
-    private void Jump()
-    {
-       
-        Vector3 jumpDirection = Vector3.up * jumpForce;
-
-        // Cast a ray upwards to check for obstacles before applying the jump
-        RaycastHit obstacleHit;
-        float obstacleCheckDistance = 1.0f; // Adjust this value based on your needs
-
-        if (!Physics.Raycast(transform.position, Vector3.up, out obstacleHit, obstacleCheckDistance))
+        if (collision.gameObject.tag == "Floor")
         {
-            // No obstacle detected, apply the jump force
-            cube.GetComponent<Rigidbody>().AddForce(jumpDirection, ForceMode.Impulse);
+            canJump = false; // Player can't jump until they press space bar again
         }
     }
 
-    private bool IsOutOfBounds()
+    void Jump()
+    {
+        UnityEngine.Debug.Log("jump");
+      //  if (IsGrounded())
+       // {
+            UnityEngine.Debug.Log("IsGrounded");
+            Vector3 jumpDirection = new Vector3(0, jumpForce * (jumpUpwards ? 1 : -1), 0); // Adjust jump force as needed
+
+            // Apply the jump force
+            cube.GetComponent<Rigidbody>().AddForce(jumpDirection, ForceMode.Impulse);
+
+            canJump = false; // Player can't jump again until they touch the floor
+            jumpUpwards = !jumpUpwards; // Toggle jump direction
+       // }
+    }
+
+    bool IsGrounded()
+    {
+        RaycastHit hit;
+        float raycastDistance = 0.1f; // Adjust this value based on your needs
+
+        // Cast a ray from the player's position downward to check for ground
+        if (Physics.Raycast(cube.transform.position, Vector3.down, out hit, raycastDistance))
+        {
+            // Check if the raycast hit something tagged as "Floor"
+            if (hit.collider.CompareTag("Floor"))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    bool IsOutOfBounds()
     {
         Transform playerTransform = cube.GetComponent<Transform>();
 
         return playerTransform.position.y < -10 || playerTransform.position.y > 16 || playerTransform.position.x < -36;
     }
 
-    private void HandleOutOfBounds()
+    void HandleOutOfBounds()
     {
         if (playerIsAlive)
         {
