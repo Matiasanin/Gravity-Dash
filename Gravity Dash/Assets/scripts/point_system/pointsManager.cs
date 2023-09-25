@@ -31,7 +31,7 @@ public class PointsManager : MonoBehaviour
         {
             currentPoints *= 1.25f; // Multiply by 25%
             timeSinceLastIncrease = 0.0f; // Reset the timer
-            Debug.Log("Multiply x 25% : " + pointsPerSecond);
+         //   Debug.Log("Multiply x 25% : " + pointsPerSecond);
         }
 
         // Check if 5 minutes have passed
@@ -39,10 +39,10 @@ public class PointsManager : MonoBehaviour
         {
             currentPoints *= 1.5f; // Multiply by 50%
             timeSinceLastIncrease = 0.0f; // Reset the timer
-            Debug.Log("Multiply x 10 : " + pointsPerSecond);
+        //    Debug.Log("Multiply x 10 : " + pointsPerSecond);
         }
 
-        Debug.Log(pointsPerSecond);
+       // Debug.Log(pointsPerSecond);
     }
 
     private float CalculatePointsPerSecond()
@@ -57,8 +57,8 @@ public class PointsManager : MonoBehaviour
             float randomMultiplier = Random.Range(1.0f, 3.0f);
             // basePointsPerSecond *= randomMultiplier;
              basePointsPerSecond *= 5;
-            Debug.Log("Random Magic x : " + randomMultiplier);
-            Debug.Log(basePointsPerSecond);
+         //   Debug.Log("Random Magic x : " + randomMultiplier);
+         //   Debug.Log(basePointsPerSecond);
         }
         if (timeSinceStart > 25.0f)
         {
@@ -66,8 +66,8 @@ public class PointsManager : MonoBehaviour
             float randomMultiplier = Random.Range(1.0f, 3.0f);
             // basePointsPerSecond *= randomMultiplier;
             basePointsPerSecond *= 10;
-            Debug.Log("Random Magic x : " + randomMultiplier);
-            Debug.Log(basePointsPerSecond);
+         //   Debug.Log("Random Magic x : " + randomMultiplier);
+          //  Debug.Log(basePointsPerSecond);
         }
 
         return basePointsPerSecond;

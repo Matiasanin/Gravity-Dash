@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5081136563284244316, guid: 9a8b5fbdca5710844b2cf4c03e74bfd7, type: 3}
       propertyPath: m_Name
-      value: Credits button
+      value: Credits
       objectReference: {fileID: 0}
     - target: {fileID: 6364111336826714769, guid: 9a8b5fbdca5710844b2cf4c03e74bfd7, type: 3}
       propertyPath: m_CullTransparentMesh
@@ -1002,7 +1002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.999966, y: -258}
+  m_AnchoredPosition: {x: 18.999966, y: 19}
   m_SizeDelta: {x: 450, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662225185
@@ -2373,7 +2373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5081136563284244316, guid: 9a8b5fbdca5710844b2cf4c03e74bfd7, type: 3}
       propertyPath: m_Name
-      value: Quit button
+      value: Quit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
