@@ -10,7 +10,8 @@ public class Logic : MonoBehaviour
     public GameObject VictoryScreen;
     public bool game = true;
     public AudioSource audioSource;
-
+    public PointsManager PointsManager;
+    public SaveGameManager SaveGameManager;
     public void restartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -18,15 +19,22 @@ public class Logic : MonoBehaviour
     }
 
 
-      
-        
+
+
 
     public void gameOver()
     {
+      //  Debug.Log("game over");
+        float currentPoints = PointsManager.GetCurrentPoints();
+        float pointsPerSecond = PointsManager.GetCurrentPointsPerSecond();
+     
+        SaveGameManager.SaveScore(currentPoints);
         GameOverScreen.SetActive(true);
+
         game = false;
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
+      
     }
 
     public void victory()

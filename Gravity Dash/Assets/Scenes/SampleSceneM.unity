@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1858,6 +1858,8 @@ MonoBehaviour:
   VictoryScreen: {fileID: 1155164178}
   game: 1
   audioSource: {fileID: 234240302}
+  PointsManager: {fileID: 830783809}
+  SaveGameManager: {fileID: 1903406831}
 --- !u!4 &234240301
 Transform:
   m_ObjectHideFlags: 0
@@ -9655,6 +9657,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876984587}
   m_Mesh: {fileID: 1570985495672401742, guid: 5bcea3be446879c4386129a83efa805d, type: 3}
+--- !u!1 &1903406828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1903406830}
+  - component: {fileID: 1903406831}
+  m_Layer: 0
+  m_Name: save_game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1903406830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903406828}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.32841, y: 21.237709, z: 7.26838}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1903406831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903406828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4478bf15c4aa14459b42a4c28725879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1904434392
 GameObject:
   m_ObjectHideFlags: 0
@@ -11698,6 +11744,7 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 2131808691}
   - {fileID: 1058099434}
+  - {fileID: 1903406830}
   - {fileID: 234240301}
   - {fileID: 1908323553}
   - {fileID: 1496352830}
