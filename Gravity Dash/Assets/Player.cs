@@ -15,7 +15,8 @@ public class _Player : MonoBehaviour
     public Logic logic;
     public GameObject cameraGO;
     public float deltaDistance;
-    public AudioSource audiosource;
+    public AudioSource jump;
+    public AudioSource land;
     public float raydistance= 4;
     
 
@@ -32,16 +33,18 @@ public class _Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        jump = cube.GetComponent<AudioSource>();
+        
         if (Input.GetKeyDown(KeyCode.Space) && (hit || IsGrounded() ))
         {
             Physics.gravity = new Vector3(0, flapforce, 0);
             flapforce = (-1) * flapforce;
+            jump.Play();
         }
         
 
         transform = cube.GetComponent<Transform>();
-        audiosource = cube.GetComponent<AudioSource>();
+        
 
         if((transform.position.y < -10) || (transform.position.y > 16) || (transform.position.x < -36))
         {
@@ -74,13 +77,13 @@ public class _Player : MonoBehaviour
         // Cast a ray from the player's position downward to check for ground
         if (Physics.Raycast(cube.transform.position, Vector3.down, out hit, raydistance))
         {
-            print("hola");
+          
             
             return true;
         }
         else if (Physics.Raycast(cube.transform.position, Vector3.up, out hit, raydistance) )
         {
-            print("hola");
+           
             return true;
         }
         return false;
@@ -90,7 +93,7 @@ public class _Player : MonoBehaviour
         if(collision.gameObject.tag == "Floor")
         {
             hit = true;
-            audiosource.Play();
+            land.Play();
         }
     }
 

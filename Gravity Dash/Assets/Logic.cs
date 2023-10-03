@@ -10,6 +10,7 @@ public class Logic : MonoBehaviour
     public GameObject VictoryScreen;
     public bool game = true;
     public AudioSource audioSource;
+    public AudioSource gameMusic;
 
     public void restartGame()
     {
@@ -27,6 +28,7 @@ public class Logic : MonoBehaviour
         game = false;
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
+        gameMusic.Pause();
     }
 
     public void victory()
