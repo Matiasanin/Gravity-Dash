@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2597,7 +2597,7 @@ Transform:
   m_GameObject: {fileID: 441675122}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 388.31, y: 0.72, z: -0.3}
+  m_LocalPosition: {x: 385.7, y: 0.7, z: -0.3}
   m_LocalScale: {x: 658.9805, y: 658.98047, z: 658.98047}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5117,7 +5117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  acceleration: 1
+  acceleration: 0.85
   rigid: {fileID: 963194230}
 --- !u!54 &963194230
 Rigidbody:
@@ -6699,7 +6699,7 @@ Transform:
   m_GameObject: {fileID: 1252826744}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 869.9, y: 0.4, z: -1}
+  m_LocalPosition: {x: 869.22, y: 0.4, z: -1}
   m_LocalScale: {x: 658.9805, y: 658.98047, z: 658.98047}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7341,7 +7341,7 @@ Transform:
   m_GameObject: {fileID: 1402590954}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08715578, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 880.4, y: -5.84, z: -1}
+  m_LocalPosition: {x: 879.19, y: -5.84, z: -1}
   m_LocalScale: {x: 658.9805, y: 658.98047, z: 658.98047}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9304,7 +9304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  acceleration: 1
+  acceleration: 0.85
   rigid: {fileID: 1770138313}
 --- !u!65 &1770138308
 BoxCollider:
@@ -9357,7 +9357,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 104
   m_CollisionDetection: 0
 --- !u!114 &1770138317
 MonoBehaviour:
@@ -9372,17 +9372,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigid: {fileID: 1770138313}
-  flapforce: 50
+  flapforce: 65
   playerIsAlive: 1
   cube: {fileID: 1770138304}
   transform: {fileID: 1770138311}
   speed: 60
   logic: {fileID: 234240300}
   cameraGO: {fileID: 963194225}
-  deltaDistance: 25
+  deltaDistance: 39.7
   jump: {fileID: 1770138320}
   land: {fileID: 745044092}
-  raydistance: 7
+  raydistance: 2.2
   hit: 0
 --- !u!82 &1770138320
 AudioSource:
